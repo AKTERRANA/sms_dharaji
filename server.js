@@ -12,8 +12,6 @@ const admRouter = require("./routers/admRouter")
 const infraRouter = require("./routers/infraRouter")
 const newsRouter = require("./routers/newsRouter")
 const datesRouter = require("./routers/datesRouter");
-const { getRana } = require("./rana/rana");
-const { getAll } = require("./controllers/admController");
 
 const app = express();
 
@@ -37,13 +35,11 @@ mongoose.connect(`${mongoUrl}`, ()=>{
     console.log("ERROR IN MONGODB =>", e)
 })
 
-// app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 
-app.use("/api/rana/all",getRana)
 // app.use("/api/products", )
 
-app.use("/api/adm/all",getAll )
 app.use("/api/user", userRouter );
 app.use("/api/infra", infraRouter);
 app.use("/api/dates", datesRouter);
@@ -54,7 +50,7 @@ app.use("/api/adm", admRouter);
 //     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 //   });
 
-const _app_folder = 'build';
+const _app_folder = 'public/build';
 // ---- SERVE STATIC FILES ---- //
 app.get('*.*', express.static(_app_folder, {maxAge: '1y'}));
 

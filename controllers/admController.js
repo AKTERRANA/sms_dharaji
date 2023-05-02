@@ -11,8 +11,8 @@ module.exports ={
               const photo = files.image;
                 // console.log(photo, "photo")
                 let oldPath = photo.filepath;
-                // let newPath = path.join(__dirname,"../", 'upload','hotelImages') + '/' + photo.originalFilename;
-                let newPath = path.join(__dirname, "../../sms_dharaji/src/assets", 'upload') + '/' + photo.originalFilename; // DEVELOPMENT 
+                let newPath = path.join(__dirname,"../",'public', 'upload','hotelImages') + '/' + photo.originalFilename;
+                // let newPath = path.join(__dirname, "../../sms_dharaji/src/assets", 'upload') + '/' + photo.originalFilename; // DEVELOPMENT 
                 let rawData = fs.readFileSync(oldPath)
                 fs.writeFile(newPath, rawData, function (err) {
                     if (err) {
