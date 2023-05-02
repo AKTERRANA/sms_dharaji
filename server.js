@@ -48,7 +48,7 @@ app.use("/api/adm", admRouter);
 //     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 //   });
 
-// const _app_folder = 'build';
+const _app_folder = 'build';
 // ---- SERVE STATIC FILES ---- //
 app.get('*.*', express.static(_app_folder, {maxAge: '1y'}));
 
