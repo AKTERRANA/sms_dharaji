@@ -38,7 +38,7 @@ mongoose.connect(`${mongoUrl}`, ()=>{
 // app.use(express.static(path.join(__dirname, 'build')))
 
 
-app.get("/api/rana/all",getRana)
+app.use("/api/rana/all",getRana)
 // app.use("/api/products", )
 app.use("/api/user", userRouter );
 app.use("/api/infra", infraRouter);
