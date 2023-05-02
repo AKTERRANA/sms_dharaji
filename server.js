@@ -37,7 +37,7 @@ mongoose.connect(`${mongoUrl}`, ()=>{
 // app.use(express.static(path.join(__dirname, 'build')))
 
 
-app.get("/test", (req, res)=>{
+app.get("/api/rana/all", (req, res)=>{
     res.send({message: "TEst success"})
 })
 // app.use("/api/products", )
