@@ -5,8 +5,6 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const path = require('path')
 
-const jwt = require("jsonwebtoken");
-const jwtSecret = process.env.jwtSecret;
 
 //ROUTER
 const userRouter = require("./routers/userRouter")
@@ -14,7 +12,6 @@ const admRouter = require("./routers/admRouter")
 const infraRouter = require("./routers/infraRouter")
 const newsRouter = require("./routers/newsRouter")
 const datesRouter = require("./routers/datesRouter");
-const { auth } = require("./auth/auth");
 
 const app = express();
 
@@ -38,27 +35,6 @@ mongoose.connect(`${mongoUrl}`, ()=>{
 })
 
 app.use(express.static(path.join(__dirname, 'build')))
-// app.use((req,res, next)=>{
-//     console.log(req.cookies, "Cookies in Server.js")
-//     next()
-// })
-const authentiate = (req, res, next)=>{
-    let token =  req.header("Authorization");
-        console.log("token", token)
-        if(!token){
-           res.status(401).json({message: "You Are Not Authorized!"})
-        }else{
-            jwt.verify(token,jwtSecret, (err, decoded)=>{
-                if(!err){
-                    req.user = decoded;
-                    console.log(decoded, "decoded")
-                    next();
-                }else{
-                    res.status(400).json({message: "You are not Authorized"})
-                }
-            } )
-        }
-}
 
 
 // app.use("/api/products", )
@@ -68,12 +44,21 @@ app.use("/api/dates", datesRouter);
 app.use("/api/news", newsRouter);
 app.use("/api/adm", admRouter);
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  });
+// app.get('/*', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'build', 'index.html'));
+//   });
+
+const _app_folder = 'build';
+// ---- SERVE STATIC FILES ---- //
+app.get('*.*', express.static(_app_folder, {maxAge: '1y'}));
+
+// ---- SERVE APLICATION PATHS ---- //
+app.all('*', function (req, res) {
+    res.status(200).sendFile(`/`, {root: _app_folder});
+});
 
   
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 app.listen(port, ()=>{
     console.log(`Server is running at PORT ${port}`)
 })
