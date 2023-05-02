@@ -12,15 +12,15 @@ module.exports ={
                 // console.log(photo, "photo")
                 let oldPath = photo.filepath;
                 let newPath = path.join(__dirname,"../",'public', 'upload','hotelImages') + '/' + photo.originalFilename;
-                // let newPath = path.join(__dirname, "../../sms_dharaji/src/assets", 'upload') + '/' + photo.originalFilename; // DEVELOPMENT 
-                let rawData = fs.readFileSync(oldPath)
+               
+                let rawData = fs.readFileSync(oldPath);
                 fs.writeFile(newPath, rawData, function (err) {
                     if (err) {
                         console.log(err);
                     }
-                    console.log(photo.originalFilename, "original file name")
-                image = `${photo.originalFilename}`;
-                // image = `hotelImages/${photo.originalFilename}`;
+                 console.log(photo.originalFilename, "original file name")
+                // image = `${photo.originalFilename}`;
+                image = `hotelImages/${photo.originalFilename}`;
                 const newAdmin = new Admin({
                     author: fields.author,
                     imgUrl: image,
