@@ -46,7 +46,8 @@ module.exports ={
         console.log("Called")
          try {
             const data = await Admin.find();
-            res.status(200).json({ success: true, data: data})
+            // res.status(200).json({ success: true, data: data})
+            res.status(200).json({ message: "It is working fine without database"})
          } catch (error) {
             res.status(400).json({ success: false, message: "Server Error, Try After sometime"})
          }
