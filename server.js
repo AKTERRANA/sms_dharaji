@@ -27,7 +27,6 @@ app.use(cors(corsOptions))
 
 // MONGOOSE
 const mongoUrl = process.env.MONGODB_URL || MONGODB_URL;
-// const mongoUrl = "mongodb+srv://sarmad:pGMr2dkFhnH983IB@sarmad-cluster.unrvk.mongodb.net/sms_dharaji"
 mongoose.set('strictQuery', true);
 mongoose.connect(`${mongoUrl}`, ()=>{
     console.log('MONGODB CONNECTED SUCCESSFULLY.')
