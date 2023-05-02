@@ -12,6 +12,7 @@ const admRouter = require("./routers/admRouter")
 const infraRouter = require("./routers/infraRouter")
 const newsRouter = require("./routers/newsRouter")
 const datesRouter = require("./routers/datesRouter");
+const { getRana } = require("./rana/rana");
 
 const app = express();
 
@@ -37,9 +38,7 @@ mongoose.connect(`${mongoUrl}`, ()=>{
 // app.use(express.static(path.join(__dirname, 'build')))
 
 
-app.get("/api/rana/all", (req, res)=>{
-    res.send({message: "TEst success"})
-})
+app.get("/api/rana/all",getRana)
 // app.use("/api/products", )
 app.use("/api/user", userRouter );
 app.use("/api/infra", infraRouter);
