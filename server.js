@@ -13,6 +13,7 @@ const infraRouter = require("./routers/infraRouter")
 const newsRouter = require("./routers/newsRouter")
 const datesRouter = require("./routers/datesRouter");
 const { getRana } = require("./rana/rana");
+const { getAll } = require("./controllers/admController");
 
 const app = express();
 
@@ -40,6 +41,8 @@ mongoose.connect(`${mongoUrl}`, ()=>{
 
 app.use("/api/rana/all",getRana)
 // app.use("/api/products", )
+
+app.use("/api/adm/all",getAll )
 app.use("/api/user", userRouter );
 app.use("/api/infra", infraRouter);
 app.use("/api/dates", datesRouter);
