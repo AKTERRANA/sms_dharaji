@@ -42,10 +42,10 @@ module.exports ={
             })
 
     },
-    getAll:async(req, res)=>{
+    getAll:(req, res)=>{
         console.log("Called")
          try {
-            const data = await Admin.find();
+            // const data = await Admin.find();
             // res.status(200).json({ success: true, data: data})
             res.status(200).json({ message: "It is working fine without database"})
          } catch (error) {
