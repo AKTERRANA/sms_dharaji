@@ -68,7 +68,7 @@ module.exports = {
       })
     }).catch(err=>{
       console.log("Error in loging in")
-      res.status(404).json({message: "User Not Found"})
+      res.status(401).json({message: "User Not Found"})
     })
   },
   signOut:(req, res)=>{

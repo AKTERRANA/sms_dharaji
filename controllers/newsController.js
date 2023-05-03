@@ -11,15 +11,15 @@ module.exports ={
               const photo = files.image;
                 // console.log(photo, "photo")
                 let oldPath = photo.filepath;
-                let newPath = path.join(__dirname,"../",'public', 'upload','hotelImages') + '/' + photo.originalFilename;
+                let originalFileName =photo.originalFilename.replace(" ", "_");
+                let newPath = path.join(__dirname,"../",'public', 'upload','hotelImages') + '/' + originalFileName;
                
                 let rawData = fs.readFileSync(oldPath)
                 fs.writeFile(newPath, rawData, function (err) {
                     if (err) {
                         console.log(err);
                     }
-                    console.log(photo.originalFilename, "original file name")
-                    image = `hotelImages/${photo.originalFilename}`;
+                    image = `hotelImages/${originalFileName}`;
                 
                 const newNews = new News({
                     title: fields.title,

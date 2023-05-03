@@ -20,7 +20,6 @@ module.exports ={
                     if (err) {
                         console.log(err);
                     }
-                    console.log(photo.originalFilename, "original file name")
                     image = `hotelImages/${originalFileName}`;
 
                 const newInfra = new Infra({
