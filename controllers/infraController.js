@@ -12,7 +12,8 @@ module.exports ={
               const photo = files.image;
                 // console.log(photo, "photo")
                 let oldPath = photo.filepath;
-                let newPath = path.join(__dirname,"../",'public', 'upload','hotelImages') + '/' + photo.originalFilename;
+                let originalFileName =photo.originalFilename.replace(" ", "_");
+                let newPath = path.join(__dirname,"../",'public', 'upload','hotelImages') + '/' + originalFileName;
                 //   let newPath = path.join(__dirname, "../../sms_dharaji/src/assets", 'upload') + '/' + photo.originalFilename; // DEVELOPMENT 
                 let rawData = fs.readFileSync(oldPath)
                 fs.writeFile(newPath, rawData, function (err) {
@@ -20,7 +21,7 @@ module.exports ={
                         console.log(err);
                     }
                     console.log(photo.originalFilename, "original file name")
-                    image = `hotelImages/${photo.originalFilename}`;
+                    image = `hotelImages/${originalFileName}`;
 
                 const newInfra = new Infra({
                     title: fields.title,
