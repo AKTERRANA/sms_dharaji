@@ -1,40 +1,29 @@
 {
   "files": {
     "main.css": "/static/css/main.a0bee1b3.chunk.css",
-    "main.js": "/static/js/main.7b1cfaff.chunk.js",
-    "main.js.map": "/static/js/main.7b1cfaff.chunk.js.map",
+    "main.js": "/static/js/main.2c801c78.chunk.js",
+    "main.js.map": "/static/js/main.2c801c78.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.701e8bab.js",
     "runtime-main.js.map": "/static/js/runtime-main.701e8bab.js.map",
     "static/css/2.f54de937.chunk.css": "/static/css/2.f54de937.chunk.css",
-    "static/js/2.60ba96be.chunk.js": "/static/js/2.60ba96be.chunk.js",
-    "static/js/2.60ba96be.chunk.js.map": "/static/js/2.60ba96be.chunk.js.map",
+    "static/js/2.e02d187a.chunk.js": "/static/js/2.e02d187a.chunk.js",
+    "static/js/2.e02d187a.chunk.js.map": "/static/js/2.e02d187a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.690fbffae63a0aa86eb8195593361522.js": "/precache-manifest.690fbffae63a0aa86eb8195593361522.js",
+    "precache-manifest.d9a07cac07fb993076e7bd51425e6aca.js": "/precache-manifest.d9a07cac07fb993076e7bd51425e6aca.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.f54de937.chunk.css.map": "/static/css/2.f54de937.chunk.css.map",
     "static/css/main.a0bee1b3.chunk.css.map": "/static/css/main.a0bee1b3.chunk.css.map",
     "static/media/5.jpg": "/static/media/5.23d984d0.jpg",
-    "static/media/IMG_8874.jpg": "/static/media/IMG_8874.445959b4.jpg",
-    "static/media/Screenshot 04-12-2023 02.52.24.png": "/static/media/Screenshot 04-12-2023 02.52.24.c3936c89.png",
-    "static/media/Screenshot 11-29-2022 05.51.49.png": "/static/media/Screenshot 11-29-2022 05.51.49.46a0aa36.png",
     "static/media/apj.png": "/static/media/apj.57ac597f.png",
-    "static/media/decidecar.png": "/static/media/decidecar.8a63df14.png",
-    "static/media/domainably.post.png": "/static/media/domainably.post.17d216f5.png",
-    "static/media/domainably.post5.png": "/static/media/domainably.post5.c320ae36.png",
-    "static/media/domainably.revised3.png": "/static/media/domainably.revised3.19ffd621.png",
-    "static/media/facebook-logo.png": "/static/media/facebook-logo.b0ab983b.png",
-    "static/media/img2.png": "/static/media/img2.b6411eb8.png",
     "static/media/Parallax.css": "/static/media/parallax.4d8031fd.jpg",
-    "static/media/solutions.png": "/static/media/solutions.ff523abf.png",
     "static/media/upcoming-event.jpg": "/static/media/upcoming-event.ad1f2edd.jpg",
-    "static/media/upcomingevent.jpg": "/static/media/upcomingevent.735bee26.jpg",
-    "static/media/watch.png": "/static/media/watch.85886330.png"
+    "static/media/upcomingevent.jpg": "/static/media/upcomingevent.735bee26.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.701e8bab.js",
     "static/css/2.f54de937.chunk.css",
-    "static/js/2.60ba96be.chunk.js",
+    "static/js/2.e02d187a.chunk.js",
     "static/css/main.a0bee1b3.chunk.css",
-    "static/js/main.7b1cfaff.chunk.js"
+    "static/js/main.2c801c78.chunk.js"
   ]
 }
