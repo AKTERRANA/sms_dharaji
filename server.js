@@ -12,6 +12,11 @@ const admRouter = require("./routers/admRouter")
 const infraRouter = require("./routers/infraRouter")
 const newsRouter = require("./routers/newsRouter")
 const datesRouter = require("./routers/datesRouter");
+const aboutRouter = require("./routers/aboutRouter");
+const logoRouter = require("./routers/logoRouter");
+const contactRouter = require("./routers/contactRouter");
+const galleryRouter = require("./routers/galleryRouter");
+const welcomeRouter = require("./routers/welcomeRouter");
 
 const app = express();
 
@@ -44,6 +49,11 @@ app.use("/api/infra", infraRouter);
 app.use("/api/dates", datesRouter);
 app.use("/api/news", newsRouter);
 app.use("/api/adm", admRouter);
+app.use("/api/about", aboutRouter);
+app.use("/api/contact", contactRouter);
+app.use("/api/logo", logoRouter);
+app.use("/api/gallery", galleryRouter);
+app.use("/api/welcome", welcomeRouter);
 
 // app.get('/*', function (req, res) {
 //     res.sendFile(path.join(__dirname, 'build', 'index.html'));
@@ -59,7 +69,7 @@ app.all('*', function (req, res) {
 });
 
   
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 app.listen(port, ()=>{
     console.log(`Server is running at PORT ${port}`)
 })

@@ -8,4 +8,5 @@ const NewsSchema = new Schema({
     date:{ type: Date, default: new Date()}
 })
 
+
 module.exports = mongoose.model("News", NewsSchema)
