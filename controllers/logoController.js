@@ -51,16 +51,13 @@ module.exports ={
         const logo = await Logo.findById({_id: req.params.id});
         console.log(logo)
         const filePath = path.join(__dirname,"../",'public', 'upload') + '/' + logo.imgUrl;
-        console.log(filePath)
-        // res.json({m:"dk"})
         fs.unlink(filePath, (err=>{
             if(err){
                 console.log(err)
                 res.status(409).json({success: false, message: "Failed Deletion"})
             }else{
 
-            
-        console.log(req.params)
+    
         let image ="";
     const form = new formidable.IncomingForm();
     form.parse(req, (err, fields, files) => {
@@ -77,7 +74,7 @@ module.exports ={
                 }
 
             image = `utility/${originalFileName}`;
-            Logo.findOneAndUpdate({_id:req.params.id}, {$set:{image}}).then((updatedData)=>{
+            Logo.findOneAndUpdate({_id:req.params.id}, {$set:{imgUrl: image}}).then((updatedData)=>{
                 res.status(200).json({ success: true, data: updatedData })
                 }).catch(e => {
                     console.log(e, "error")
