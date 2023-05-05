@@ -22,7 +22,8 @@ module.exports ={
 
                 image = `gallery/${originalFileName}`;
                 const newGallery = new Gallery({
-                    imgUrl: image
+                    imgUrl: image,
+                    title: fields.title
                 })
     
                 newGallery.save().then((savedData) => {
@@ -40,7 +41,7 @@ module.exports ={
 
     },
     getAll:(req, res)=>{
-        console.log("Called")
+        console.log("Called Gallery")
         Gallery.find().then(resp=>{
             res.status(200).json({ success: true, data: resp})
         }).catch(error=>{
@@ -48,8 +49,16 @@ module.exports ={
          })
 
     },
-    delete:(req, res)=>{
-        console.log(req.params)
+    delete:async(req, res)=>{
+        const image =await Gallery.findById({_id:req.params.id});
+
+        const filePath = path.join(__dirname,"../",'public', 'upload') + '/' + image.imgUrl;
+        fs.unlink(filePath, (err=>{
+            if(err){
+                console.log(err)
+                res.status(409).json({success: false, message: "Failed Deletion"})
+            }else{
+
         Gallery.findOneAndDelete({_id:req.params.id}).then((deletedData)=>{
             console.log("Deleted Data", deletedData)
             res.status(200).json({success: true,message: "Data deleted Successfully"})
@@ -57,6 +66,9 @@ module.exports ={
             console.log("Error Deleting")
             res.status(400).json({success: false, message: "Failed Delete"})
         })
+
+    }}
+    ))
 
     }
 
