@@ -74,7 +74,6 @@ module.exports ={
                 experience: fields.experience
                 }
     
-        console.log(req.body)
         Admin.findOneAndUpdate({_id:req.params.id}, 
             {$set:fieldsData}).then((updatedData)=>{
           
